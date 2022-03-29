@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>
+      Raport ze świadczenia usług programistycznych
+      na podstawie umowy z dnia <span id="contractDate">2019-10-10</span>
+      za okres <span id="invoiceMonth">Marzec 2020</span>
+    </h1>
+    <div class="item">
+      <div class="item__title">Wykonawca</div>
+      <b id="contractorLine1">Contractor line 1</b>
+      <div id="contractorLine2">Contractor line 2</div>
+      <div id="contractorLine3">Contractor line 3</div>
+    </div>
+    <div class="item">
+      <div class="item__title">Kontrahent</div>
+      <b id="clientLine1">Client line 1</b>
+      <div id="clientLine2">Client line 2</div>
+      <div id="clientLine3">Client line 3</div>
+    </div>
+    <div>
+      Wykaz godzin:
+      <table>
+        <thead>
+          <tr>
+            <th>Opis</th>
+            <th>Ilość godzin</th>
+            <th>Stawka</th>
+            <th>Wartość</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Świadczenie usług programistycznych</td>
+            <td id="workH">135</td>
+            <td>
+              <span class="ratePerH">95</span>
+              <span class="rateCurrency">PLN</span>
+            </td>
+            <td>
+              <span class="workValue">12825</span>
+              <span class="rateCurrency">PLN</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Spotkania z zespołem</td>
+            <td id="meetingsH">33</td>
+            <td>
+              <span class="ratePerH">95</span>
+              <span class="rateCurrency">PLN</span>
+            </td>
+            <td>
+              <span class="meetingsValue">3135</span>
+              <span class="rateCurrency">PLN</span>
+            </td>
+          </tr>
+          <tr>
+            <td id="additionalRowTitle"></td>
+            <td></td>
+            <td></td>
+            <td id="additionalRow">
+              <span id="additionalRowValue"></span>
+              <span id="rateCurrency">PLN</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      Wynagrodzenie z tytułu przeniesienia praw autorskich stanowi <span id="copyrightPercentage">75</span>% wynagrodzenia.
+    </div>
+  </body>
+</html>
