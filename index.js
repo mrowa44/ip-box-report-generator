@@ -7,15 +7,19 @@ const TEMPLATE = './template.html';
 const STYLE = './style.css';
 
 function getPageConfig(initialPageConfig) {
-  const { meetingsH, hWorkedMonth, ratePerH } = initialPageConfig;
-  const workH = hWorkedMonth - meetingsH;
+  const { hWorkedMonth } = initialPageConfig;
+  const ratePerH = Math.round(initialPageConfig.ratePerH);
+  const meetingsH = Math.round(initialPageConfig.meetingsH);
+  const workH = Math.round(hWorkedMonth - meetingsH);
   const workValue = Math.round(ratePerH * workH);
   const meetingsValue = Math.round(ratePerH * meetingsH);
   const copyrightPercentage = Math.round(workH / hWorkedMonth * 100);
   return {
     ...initialPageConfig,
+    ratePerH,
     workValue,
     workH,
+    meetingsH,
     meetingsValue,
     copyrightPercentage,
   };
