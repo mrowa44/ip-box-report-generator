@@ -8,11 +8,11 @@ const STYLE = './style.css';
 
 function getPageConfig(initialPageConfig) {
   const { hWorkedMonth } = initialPageConfig;
-  const ratePerH = Math.round(initialPageConfig.ratePerH);
-  const meetingsH = Math.round(initialPageConfig.meetingsH);
-  const workH = Math.round(hWorkedMonth - meetingsH);
-  const workValue = Math.round(ratePerH * workH);
-  const meetingsValue = Math.round(ratePerH * meetingsH);
+  const ratePerH = initialPageConfig.ratePerH.toFixed(6);
+  const meetingsH = initialPageConfig.meetingsH;
+  const workH = hWorkedMonth - meetingsH;
+  const workValue = ratePerH * workH;
+  const meetingsValue = ratePerH * meetingsH;
   const copyrightPercentage = Math.round(workH / hWorkedMonth * 100);
   return {
     ...initialPageConfig,
@@ -46,7 +46,7 @@ async function generatePage({ browser, pageConfig }) {
     const classArr = [...document.querySelectorAll(`.${key}`)];
     if (classArr.length > 0) {
       for (const item of classArr) {
-        item.innerHTML = config[key];
+        item.innerHTML = config[key].toString().replace(".", ",");
       }
     }
   });
